@@ -52,7 +52,7 @@ export default function ProfileEditPage() {
             />
           </div>
 
-          <p>Email: {user?.email ?? ''}</p>
+          <p>Email: {user?.email}</p>
 
           <div className={css.actions}>
             <button type="submit" className={css.saveButton}>
