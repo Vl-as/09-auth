@@ -2,7 +2,6 @@ import { type Note } from '@/types/note';
 
 import { nextServer } from './api';
 import { User } from '@/types/user';
-const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
 interface NotesResponse {
   notes: Note[];
@@ -15,9 +14,6 @@ export async function fetchNotes(
   tag: string | undefined
 ): Promise<NotesResponse> {
   const response = await nextServer.get<NotesResponse>('/notes', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
     params: {
       page,
       perPage: 12,
@@ -36,28 +32,18 @@ export interface NewNoteData {
 }
 
 export async function createNote(newNote: NewNoteData): Promise<Note> {
-  const { data } = await nextServer.post<Note>('/notes', newNote, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const { data } = await nextServer.post<Note>('/notes', newNote);
 
   return data;
 }
 
 export async function deleteNote(id: Note['id']): Promise<Note> {
-  const { data } = await nextServer.delete<Note>(`/notes/${id}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const { data } = await nextServer.delete<Note>(`/notes/${id}`);
   return data;
 }
 
-export default async function fetchNoteById(id: Note['id']): Promise<Note> {
-  const { data } = await nextServer.get<Note>(`/notes/${id}`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+export async function fetchNoteById(id: Note['id']): Promise<Note> {
+  const { data } = await nextServer.get<Note>(`/notes/${id}`);
   return data;
 }
 

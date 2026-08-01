@@ -3,7 +3,6 @@ import { type Note } from '@/types/note';
 import { nextServer } from './api';
 import { cookies } from 'next/headers';
 import { User } from '@/types/user';
-const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
 interface NotesResponse {
   notes: Note[];
@@ -15,9 +14,10 @@ export async function fetchNotes(
   search: string,
   tag: string | undefined
 ): Promise<NotesResponse> {
+  const cookieStore = await cookies();
   const response = await nextServer.get<NotesResponse>('/notes', {
     headers: {
-      Authorization: `Bearer ${token}`,
+      Cookie: cookieStore.toString(),
     },
     params: {
       page,
@@ -30,9 +30,12 @@ export async function fetchNotes(
   return response.data;
 }
 
-export default async function fetchNoteById(id: Note['id']): Promise<Note> {
+export async function fetchNoteById(id: Note['id']): Promise<Note> {
+  const cookieStore = await cookies();
   const { data } = await nextServer.get<Note>(`/notes/${id}`, {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: {
+      Cookie: cookieStore.toString(),
+    },
   });
   return data;
 }
