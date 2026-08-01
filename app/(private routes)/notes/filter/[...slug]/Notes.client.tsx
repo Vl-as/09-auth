@@ -8,14 +8,13 @@ import { useState } from 'react';
 import Pagination from '@/components/Pagination/Pagination';
 import SearchBox from '@/components/SearchBox/SearchBox';
 import { useDebouncedCallback } from 'use-debounce';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 interface NotesProps {
   tag: string | undefined;
 }
 
 export default function Notes({ tag }: NotesProps) {
-  const router = useRouter();
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
 
@@ -42,12 +41,9 @@ export default function Notes({ tag }: NotesProps) {
             onPageChange={setPage}
           />
         )}
-        <button
-          className={css.button}
-          onClick={() => router.push('/notes/action/create')}
-        >
+        <Link className={css.button} href="/notes/action/create">
           Create note +
-        </button>
+        </Link>
       </header>
       {isLoading && <p>Loading...</p>}
       {isError && <p>Something went wrong</p>}
