@@ -7,16 +7,15 @@ const privateRoutes = ['/profile', '/notes'];
 const publicRoutes = ['/sign-in', '/sign-up'];
 
 export async function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
   const cookieStore = await cookies();
   const accessToken = cookieStore.get('accessToken')?.value;
   const refreshToken = cookieStore.get('refreshToken')?.value;
 
-  const { pathname } = request.nextUrl;
-
+  const isPublicRoute = publicRoutes.some(route => pathname.startsWith(route));
   const isPrivateRoute = privateRoutes.some(route =>
     pathname.startsWith(route)
   );
-  const isPublicRoute = publicRoutes.some(route => pathname.startsWith(route));
 
   if (!accessToken) {
     if (refreshToken) {
@@ -25,14 +24,11 @@ export async function proxy(request: NextRequest) {
 
       if (setCookie) {
         const cookieArray = Array.isArray(setCookie) ? setCookie : [setCookie];
-
         for (const cookieStr of cookieArray) {
           const parsed = parseSetCookie(cookieStr);
 
           if (parsed.value) {
-            const { name, value, ...options } = parsed;
-
-            cookieStore.set(name, value, options);
+            cookieStore.set(parsed.name, parsed.value, parsed);
           }
         }
 
@@ -43,7 +39,6 @@ export async function proxy(request: NextRequest) {
             },
           });
         }
-
         if (isPrivateRoute) {
           return NextResponse.next({
             headers: {
@@ -56,10 +51,12 @@ export async function proxy(request: NextRequest) {
     if (isPublicRoute) {
       return NextResponse.next();
     }
+
     if (isPrivateRoute) {
       return NextResponse.redirect(new URL('/sign-in', request.url));
     }
   }
+
   if (isPublicRoute) {
     return NextResponse.redirect(new URL('/', request.url));
   }
