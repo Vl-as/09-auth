@@ -1,32 +1,49 @@
 .app {
-  width: 90%;
-  max-width: 1280px;
-  margin: 0px auto;
-  padding: 0 16px 16px;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: 42px 5vw 70px;
   flex: 1;
 }
 
 .toolbar {
-  margin-bottom: 16px;
+  margin-bottom: 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #dee2e6;
+  gap: 18px;
+  padding: 0 0 22px;
+  border-bottom: 1px solid var(--line);
 }
 
 .button {
-  padding: 6px 12px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #0d6efd;
+  padding: 12px 16px;
+  color: #fffdf8;
+  background: var(--teal);
   border: none;
-  border-radius: 4px;
+  border-radius: 2px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .button:hover {
-  background-color: #0b5ed7;
+  background-color: var(--teal-dark);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  .toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button {
+    text-align: center;
+  }
 }

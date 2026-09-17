@@ -1,25 +1,142 @@
 .main {
   flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 620px;
 }
 
 .container {
-  width: 90%;
-  max-width: 1280px;
-  margin: 0px auto;
-  padding: 0 16px 16px;
+  position: relative;
+  width: min(90%, 1180px);
+  margin: 0 auto;
+  padding: 82px 7vw 96px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.container::after {
+  position: absolute;
+  right: 8%;
+  top: 18%;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(189, 118, 80, 0.3);
+  border-radius: 50%;
+  content: '';
+}
+
+.eyebrow {
+  margin: 0 0 24px;
+  color: var(--copper);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .title {
-  font-size: 36px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 60px;
-  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 0 26px;
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-size: clamp(3.4rem, 7vw, 6.9rem);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.065em;
 }
 
 .description {
-  font-size: 18px;
-  color: #444444;
-  line-height: 28px;
-  margin-bottom: 16px;
+  max-width: 470px;
+  margin: 0 0 32px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ctas a {
+  padding: 14px 20px;
+  border: 1px solid var(--teal);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.ctas a:hover {
+  transform: translateY(-2px);
+}
+
+.primary {
+  color: #fffdf8;
+  background: var(--teal);
+}
+
+.primary:hover {
+  background: var(--teal-dark);
+}
+
+.secondary {
+  color: var(--teal);
+  background: transparent;
+}
+
+.secondary:hover {
+  background: #e5efeb;
+}
+
+.note {
+  position: absolute;
+  right: 8%;
+  bottom: 58px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.note p {
+  margin: 0;
+}
+
+.noteMark {
+  color: var(--copper);
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+}
+
+@media (max-width: 700px) {
+  .main {
+    min-height: 0;
+  }
+
+  .container {
+    padding: 56px 8vw 150px;
+  }
+
+  .container::after {
+    right: -50px;
+    top: 12%;
+  }
+
+  .note {
+    right: 8vw;
+    bottom: 44px;
+  }
 }

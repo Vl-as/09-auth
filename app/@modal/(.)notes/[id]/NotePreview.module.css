@@ -1,16 +1,19 @@
 .button {
-  width: 50px;
-  background-color: transparent;
+  align-self: flex-start;
+  padding: 0;
+  color: var(--teal);
+  background: transparent;
   border: none;
-  text-decoration: underline;
-  font-size: 16px;
   cursor: pointer;
-
-  transition: opacity 0.3s;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
 }
 
 .button:hover {
-  opacity: 0.8;
+  color: var(--teal-dark);
 }
 
 .main {
@@ -18,57 +21,83 @@
 }
 
 .container {
-  max-width: 800px;
-  margin: 32px auto;
-  padding: 24px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  padding: 42px 48px 48px;
+  background: var(--surface);
+  background-image: linear-gradient(
+    rgba(31, 98, 91, 0.035) 1px,
+    transparent 1px
+  );
+  background-size: 100% 34px;
 }
 
 .item {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 20px;
 }
 
 .header h2 {
   margin: 0;
-  font-size: 28px;
-  color: #333;
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
 }
 
 .content {
-  font-size: 18px;
-  line-height: 26px;
-  color: #444;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.85;
   white-space: pre-wrap;
 }
 
 .date {
-  font-size: 14px;
-  color: #888;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
   text-align: right;
+  text-transform: uppercase;
 }
 
 .tag {
+  align-self: flex-start;
   display: inline-block;
-  padding: 4px 8px;
-  font-size: 12px;
-  color: #0d6efd;
-  background-color: #e7f1ff;
-  border: 1px solid #b6d4fe;
-  border-radius: 12px;
+  margin: 0;
+  padding: 6px 10px;
+  color: var(--teal);
+  background: #e5efeb;
+  border: 1px solid #c4dcd5;
+  border-radius: 2px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   max-width: 100px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 30px 24px 34px;
+  }
+
+  .item {
+    gap: 20px;
+  }
 }

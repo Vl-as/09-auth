@@ -1,10 +1,44 @@
+:root {
+  --ink: #182321;
+  --muted: #687572;
+  --paper: #f4f1ea;
+  --surface: #fffdf8;
+  --line: #d9ded8;
+  --teal: #1f625b;
+  --teal-dark: #164a45;
+  --copper: #bd7650;
+  --shadow: 0 18px 45px rgba(24, 35, 33, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+}
+
 body {
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Helvetica Neue', sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  background-color: #f8f9fa;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(31, 98, 91, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 98, 91, 0.035) 1px, transparent 1px);
+  background-size: 34px 34px;
+  font-family: var(--font-roboto), sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }

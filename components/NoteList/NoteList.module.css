@@ -1,36 +1,57 @@
 .list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
+  gap: 18px;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .listItem {
-  background-color: #ffffff;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+  padding: 24px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 28px rgba(24, 35, 33, 0.055);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 180px;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.listItem::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--copper);
+  content: '';
+}
+
+.listItem:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
 }
 
 .title {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0 0 8px 0;
-  color: #212529;
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 400;
 }
 
 .content {
   margin: 0;
   flex-grow: 1;
-  font-size: 14px;
-  color: #495057;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
   margin-bottom: 12px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -40,18 +61,20 @@
 
 .button {
   align-self: flex-end;
-  padding: 6px 12px;
-  font-size: 14px;
-  color: #fff;
-  background-color: #dc3545;
+  padding: 7px 10px;
+  color: #a84b3d;
+  background: transparent;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
 }
 
 .button:hover {
-  background-color: #bb2d3b;
+  color: #71352e;
 }
 
 .footer {
@@ -63,12 +86,15 @@
 
 .tag {
   display: inline-block;
-  padding: 4px 8px;
-  font-size: 12px;
-  color: #0d6efd;
-  background-color: #e7f1ff;
-  border: 1px solid #b6d4fe;
-  border-radius: 12px;
+  padding: 5px 9px;
+  color: var(--teal);
+  background: #e5efeb;
+  border: 1px solid #c4dcd5;
+  border-radius: 2px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   max-width: 100px;
   white-space: nowrap;
   overflow: hidden;
@@ -77,18 +103,20 @@
 
 .link {
   align-self: flex-end;
-  padding: 6px 12px;
-  font-size: 14px;
-  color: #fff;
-  background-color: #0d6efd;
+  padding: 7px 10px;
+  color: var(--teal);
+  background: transparent;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: background-color 0.2s ease;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
 }
 
 .link:hover {
-  background-color: #0b5ed7;
+  color: var(--teal-dark);
 }

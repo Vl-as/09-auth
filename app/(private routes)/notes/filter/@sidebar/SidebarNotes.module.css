@@ -2,22 +2,30 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .menuItem {
-  margin-bottom: 16px;
+  margin: 0;
 }
 
 .menuLink {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
   display: block;
-  padding: 8px 16px;
-  transition: background-color 0.3s ease;
+  padding: 11px 13px;
+  color: rgba(255, 253, 248, 0.62);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .menuLink:hover {
-  background-color: #444;
-  color: #ddd;
+  color: #fffdf8;
+  background-color: rgba(255, 253, 248, 0.1);
 }
