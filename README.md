@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Notes App
 
-## Getting Started
+A modern full-stack note management application built with **Next.js**,
+**React**, and **TypeScript**. The application allows users to securely manage
+their personal notes through authentication, protected routes, and an intuitive
+user interface.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- 🔐 User authentication (Sign Up / Sign In)
+- 👤 Protected user profile
+- 📝 Create, edit and delete notes
+- 🔍 Search and filter notes
+- 📂 Dynamic note pages
+- 🪟 Note preview in modal window
+- 📱 Responsive design
+- ⚡ Fast navigation using the Next.js App Router
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40"/>
+</p>
+
+**React • Next.js • TypeScript • CSS Modules**
+
+---
+
+## 🚀 Next.js Features
+
+- ✅ App Router
+- ✅ Server Components
+- ✅ Client Components
+- ✅ Dynamic Routes
+- ✅ Nested Layouts
+- ✅ Parallel Routes
+- ✅ Intercepting Routes
+- ✅ Error Boundaries
+- ✅ Route Groups
+
+---
+
+## 📂 Project Structure
+
+```text
+app/
+├── (auth routes)
+│   ├── sign-in
+│   └── sign-up
+│
+├── (private routes)
+│   ├── notes
+│   ├── profile
+│   └── action/create
+│
+└── @modal
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📸 Screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<p align="center">
+<img src="https://github.com/user-attachments/assets/79e40d85-3ef5-456a-bf43-2cbcf2da46f6" width="90%">
+</p>
 
-## Learn More
+<p align="center">
+<img src="https://github.com/user-attachments/assets/44967644-c2c7-46b3-94c2-53d8ed908ccc" width="44%">
+<img src="https://github.com/user-attachments/assets/857163f6-04bb-4907-a5fd-f06bd2f1f4ad" width="44%">
+</p>
 
-To learn more about Next.js, take a look at the following resources:
+<p align="center">
+<img src="https://github.com/user-attachments/assets/7bba1839-51af-463c-884d-f5617c7d52c5" width="44%">
+<img src="https://github.com/user-attachments/assets/abd9cfcc-176b-4b32-b155-aee88d81bb90" width="44%">
+</p>
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚙️ Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git clone https://github.com/Vl-as/09-auth.git
 
-## Deploy on Vercel
+cd 09-auth
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+npm install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm run dev
+```
+
+Open
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🎯 What I Learned
+
+During this project I improved my skills in:
+
+- Next.js App Router architecture
+- Authentication flow
+- Dynamic and nested routing
+- Parallel & Intercepting Routes
+- State management
+- Working with REST APIs
+- TypeScript
+- Component architecture
+
+---
+
+## 🔮 Future Improvements
+
+- Dark mode
+- Rich text editor
+- Note categories
+- Drag & Drop
+- Markdown support
+- Search highlighting
+- Offline mode
+
+---
+
+## 👨‍💻 Author
+
+**Vl-as**
+
+[GitHub](https://github.com/Vl-as) •
+[LinkedIn](https://linkedin.com/in/volodymyr-asieiev) •
+[Telegram](https://t.me/vasvv)
