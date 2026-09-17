@@ -67,22 +67,8 @@ app/
 
 ---
 
-## 📸 Screenshots
 
-<p align="center">
-<img src="https://github.com/user-attachments/assets/79e40d85-3ef5-456a-bf43-2cbcf2da46f6" width="90%">
-</p>
 
-<p align="center">
-<img src="https://github.com/user-attachments/assets/44967644-c2c7-46b3-94c2-53d8ed908ccc" width="44%">
-<img src="https://github.com/user-attachments/assets/857163f6-04bb-4907-a5fd-f06bd2f1f4ad" width="44%">
-</p>
-
-<p align="center">
-<img src="https://github.com/user-attachments/assets/7bba1839-51af-463c-884d-f5617c7d52c5" width="44%">
-<img src="https://github.com/user-attachments/assets/abd9cfcc-176b-4b32-b155-aee88d81bb90" width="44%">
-</p>
----
 
 ## ⚙️ Installation
 
